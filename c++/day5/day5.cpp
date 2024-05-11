@@ -12,8 +12,6 @@
 #include <tuple>
 
 #include <algorithm>
-#include <ranges>
-
 #include <future>
 
 using namespace std;
