@@ -1,4 +1,6 @@
 DIRS=$(wildcard day*)
+export CXX=clang++
+export CXXFLAGS=--std=c++20 -O3
 
 .PHONY: all clean
 

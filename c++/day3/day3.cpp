@@ -99,6 +99,7 @@ int main()
             } else if (ss.str().length() > 0) {
                 if (is_part) {
                     int digit = stoi(ss.str());
+		    cout << digit << "\n";
                     sum += digit;
                     if (current_influence->isGear) {
                         current_influence->partsConnected.push_back(digit);

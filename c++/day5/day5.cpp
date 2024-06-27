@@ -94,10 +94,6 @@ struct SeedGenerator
             return optional<uint32_t>();
         }
 
-        if (current_offset % 1000000 == 0) {
-            cout << "Seed Generator[" << id << "]: Current Offset: " << current_offset << "\n";
-        }
-
         auto seed = range.beg_from + current_offset;
         current_offset += 1;
         return seed;

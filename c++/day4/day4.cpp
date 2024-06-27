@@ -18,7 +18,7 @@ const int NUMBERS_ALL = NUMBERS_WIN + NUMBERS_MINE;
 string input_name = "input.txt";
 int max_card_number = 0;
 
-map<int, array<string, NUMBERS_ALL>> numbers;
+map<int, array<string, NUMBERS_ALL>> numbers_map;
 map<int, int> cached_hits;
 vector<int> cards[2];
 vector<int>* current_cards = &(cards[0]);
@@ -81,12 +81,12 @@ int main(int argc, char** argv)
                 it += 1;
             }
         }
-        numbers[id] = nums;
+        numbers_map[id] = nums;
         current_cards->push_back(id);
     }
 
     for (int c : *current_cards) {
-        const auto& arr = numbers[c];
+        const auto& arr = numbers_map[c];
         auto w_beg = arr.begin();
         auto w_end = arr.begin() + NUMBERS_WIN;
         auto m_beg = w_end;
@@ -106,12 +106,6 @@ int main(int argc, char** argv)
     while (!quit) {
         total += current_cards->size();
         for (int c : *current_cards) {
-            const auto& arr = numbers[c];
-            auto w_beg = arr.begin();
-            auto w_end = arr.begin() + NUMBERS_WIN;
-            auto m_beg = w_end;
-            auto m_end = arr.end();
-
             auto hits = cached_hits[c];
             for(int nc : next_cards(c, hits)) {
                 another_cards->push_back(nc);
