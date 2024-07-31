@@ -3,7 +3,6 @@
 #include <fstream>
 #include <sstream>
 #include <string>
-#include <chrono>
 
 #include <vector>
 #include <array>
@@ -111,6 +110,8 @@ int main(int argc, char** argv)
                 another_cards->push_back(nc);
             }
         }
+
+        cout << another_cards->size() << "\n";
 
         if (another_cards->size() == 0) {
             quit = true;

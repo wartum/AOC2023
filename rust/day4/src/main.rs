@@ -108,7 +108,7 @@ fn main() {
         }
         original_cards.push(Card::from(line));
     }
-    
+
     let sum: i32 = original_cards.iter()
         .map(|c| c.count_points())
         .sum();

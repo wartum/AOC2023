@@ -89,10 +89,9 @@ fn main() {
     let winning_strategies_number: Vec<i32> = races.iter().map(|r| r.get_winning_strategies()).collect();
     let mut output = 0;
     for x in winning_strategies_number {
-        if output == 0 {
-            output = x;
-        } else {
-            output *= x;
+        match output {
+            0 => output  = x,
+            _ => output *= x
         }
     }
     println!("{}", output);

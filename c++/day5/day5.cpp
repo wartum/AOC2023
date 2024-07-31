@@ -91,7 +91,7 @@ struct SeedGenerator
     optional<uint32_t> next_seed()
     {
         if (current_offset >= range.len) {
-            return optional<uint32_t>();
+            return {};
         }
 
         auto seed = range.beg_from + current_offset;
