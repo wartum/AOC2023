@@ -1,3 +1,5 @@
+include ../makedefs.mk
+
 DAY_NO=2
 
 day$(DAY_NO): day$(DAY_NO).o
